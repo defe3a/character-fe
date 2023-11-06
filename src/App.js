@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import LogoutPage from "./Pages/LogoutPage";
+import LandingPage from "./Pages/LandingPage";
+import NoPage from "./Pages/NoPage";
+import Navbar from "./Common/NavBar";
+import { AuthProvider } from "./authProvider";
+import { LoginPage } from "./Pages/LoginPage";
+import UserPage from "./Pages/UserPage";
+import CreatePage from "./Pages/CreatePage";
+import { RegisterPage } from "./Pages/RegisterPage";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="logout" element={<LogoutPage />} />
+          <Route path="user" element={<UserPage />} />
+          <Route path="create" element={<CreatePage />} />
+          <Route path="register" element={<RegisterPage />} />
+          <Route path="*" element={<NoPage />} />
+        </Routes>
+      </AuthProvider>
     </div>
   );
 }
-
-export default App;

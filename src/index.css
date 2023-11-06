@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.custom-prev-arrow,
+.custom-next-arrow {
+  position: absolute;
+    top: 50%;
+  transform: translateY(-50%);
+  background-color: #0073e6; /* Color de fondo de las flechas */
+  color: #fff; /* Color del texto de las flechas */
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.custom-prev-arrow {
+  left: 10px; /* Alineación de la flecha izquierda */
+}
+
+.custom-next-arrow {
+  right: 10px; /* Alineación de la flecha derecha */
+}
